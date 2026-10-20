@@ -1,0 +1,5 @@
+PySide6
+piper-tts
+numpy
+faster-whisper
+openwakeword

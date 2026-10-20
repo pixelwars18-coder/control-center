@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+voices/
+data/jarvis.json
+data/.lock

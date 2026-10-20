@@ -1,0 +1,32 @@
+[
+  {
+    "id": "disk",
+    "label": "Disk usage",
+    "cmd": "df -h -x tmpfs -x devtmpfs -x efivarfs"
+  },
+  {
+    "id": "memory",
+    "label": "Memory",
+    "cmd": "free -h"
+  },
+  {
+    "id": "uptime",
+    "label": "Uptime",
+    "cmd": "uptime -p"
+  },
+  {
+    "id": "top",
+    "label": "Top processes",
+    "cmd": "ps -eo pid,comm,%cpu,%mem --sort=-%cpu | head -n 11"
+  },
+  {
+    "id": "updates",
+    "label": "Pending updates",
+    "cmd": "checkupdates 2>/dev/null | wc -l | xargs -I{} echo '{} package updates available'"
+  },
+  {
+    "id": "gpu",
+    "label": "GPU status",
+    "cmd": "nvidia-smi --query-gpu=name,temperature.gpu,utilization.gpu,memory.used,memory.total --format=csv 2>/dev/null || echo 'No NVIDIA GPU found'"
+  }
+]
